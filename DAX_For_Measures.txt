@@ -1,0 +1,10 @@
+
+
+
+Cost Of This Sale In $USD = Sales[Qty] * RELATED(Products_And_Metrics[Metrics.Per Unit Cost to make])
+
+% Gross Profit by Product = 
+CALCULATE( (SUM(Sales[Value Of This Sale In $USD]) - SUM(Sales[Cost Of This Sale In $USD]))   
+/ 
+CALCULATE(SUM(Sales[Value Of This Sale In $USD]) - SUM(Sales[Cost Of This Sale In $USD]), ALL(Sales))) * 100.0
+
